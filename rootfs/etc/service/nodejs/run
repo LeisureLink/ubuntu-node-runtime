@@ -1,0 +1,17 @@
+#!/bin/sh
+
+node_svc_root=${NODE_SERVICE_ROOT:-/opt/app}
+
+if [ ! -d "${node_svc_root}" ]; then
+  printf 'ERROR: Unable to access service root path: %s; did you forget to include the service?\n' "${node_svc_root}" 1>&2
+  printf '\n\tThis container runs a node application as a service. You must include the service in the docker image or mount it using the --volume option when you call docker run. The default path where the container expects your application to reside is /opt/app; you can specify an alternate path by setting the environment variable NODE_SERVICE_ROOT.\n\n' 1>&2
+  exit 1
+fi
+
+# change directory to the node service root
+cd ${node_svc_root}
+
+# redirect stderr to stdout
+exec 2>&1
+# run the service using npm's start command.
+exec /sbin/setuser node npm start
