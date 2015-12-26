@@ -4,7 +4,7 @@ A docker image for running nodejs applications in an ubuntu based container.
 
 ## What's in the box
 
-`ubuntu-node-runtime` is intended as a runtime environment for nodejs applications. Its purpose is to run a nodejs application that has already been built, probably via `npm install`. We build ours with `leisurelink/ubuntu-node-build-machine`.
+`ubuntu-node-runtime` is intended as a runtime environment for nodejs applications. Its purpose is to run a nodejs application that has already been built, probably via `npm install`. We build ours with [`leisurelink/ubuntu-node-build-machine`](https://github.com/LeisureLink/ubuntu-node-build-machine).
 
 ## Use
 
