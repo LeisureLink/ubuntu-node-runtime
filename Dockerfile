@@ -1,4 +1,4 @@
-FROM leisurelink/baseimage-node:latest
+FROM leisurelink/baseimage-node:node-0.12.7
 MAINTAINER LeisureLink Tech <techteam@leisurelink.com>
 
 # Indicate where your node app will located in the container. The default is:
